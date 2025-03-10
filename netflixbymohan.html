@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+body {
+    margin: 0px;
+    background-color: black;
+}
+
+.overlap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.netflix_img {
+    opacity: 1;
+    height: 80px;
+    width: 200px;
+    padding-left: 30px;
+
+}
+
+.Sign_in {
+    padding-right: 100px;
+    padding-top: 20px;
+}
+
+.home_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 5rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.lan {
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    background-color: transparent;
+    margin-right: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+
+}
+
+.Language {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.main {
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/f268d374-734d-474f-ad13-af5ba87ef9fc/web/IN-en-20250210-TRIFECTA-perspective_92338d5d-6ccd-4b1a-8536-eb2b0240a55e_large.jpg");
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.s1 {
+    font-family: Fantasy;
+    font-size: 35px;
+}
+
+.s2 {
+    font-family: Fantasy;
+    font-size: 38px;
+    padding: 0px;
+}
+
+.s3 {
+    font-size: 20px;
+}
+
+.s4 {
+    font-family: Monospace;
+    font-size: 14px;
+}
+
+.b1 {
+    padding: 17px;
+    padding-right: 22px;
+    padding-left: 22px;
+    background-color: red;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.b2 {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: red;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+input {
+    padding: 17px;
+    width: 250px;
+    margin-right: 15px;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.input_con {
+    margin-top: 10px;
+}
+
+.reasons_con {
+    margin-right: 15px;
+    border-radius: 10px;
+    color: white;
+    height: 150px;
+    width: 350px;
+    padding: 20px;
+    background-image: linear-gradient(to right, #8E0E00, #1F1C18);
+}
+
+.reasons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.more_heading {
+    padding-top: 1rem;
+    margin-left: 6.2rem;
+    color: white;
+}
+
+.frequent_con {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 80vw;
+    margin-left: 6rem;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.frequent_con:hover {
+    background-color: #444;
+}
+
+.f_h {
+    font-size: 25px;
+
+}
+
+.plus-icon {
+    margin-top: 7px;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    /* Background color for the icon container */
+    border-radius: 50%;
+    /* Optional: Round the container */
+}
+
+.plus-icon::before,
+.plus-icon::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    /* White color for the plus icon */
+}
+
+.plus-icon::before {
+    width: 4px;
+    /* Vertical bar thickness */
+    height: 25px;
+    /* Vertical bar length */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plus-icon::after {
+    width: 25px;
+    /* Horizontal bar thickness */
+    height: 4px;
+    /* Horizontal bar length */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.explanation {
+    display: none;
+
+}
+
+.show {
+    display: block;
+    color: white;
+    height: 100px;
+    width: 80vw;
+    margin-left: 6rem;
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+
+}
+
+.f_hide {
+
+    border-radius: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.main4 {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.questions_con {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    opacity: 0.61;
+    text-decoration: underline;
+}
+
+.Questions {
+    margin-top: 2.5rem;
+    margin-left: 4.4rem;
+    color: white;
+    opacity: 0.61;
+}
+
+.Questions_num {
+    text-decoration: underline;
+}
+
+.lan_1 {
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    opacity: 0.80;
+    background-color: transparent;
+    margin-right: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-left: 4.4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.Questions_1 {
+    margin-left: 4.4rem;
+    color: white;
+    opacity: 0.61;
+    margin-bottom: 3rem;
+}
+
+.carousel_container {
+    height: 50vh;
+    width: 80vw;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel_items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.3;
+
+}
+
+.carousel_images_con {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 200px;
+    /* margin-left: 20px; */
+    margin: 20px;
+}
+
+.pre {
+    height: 100px;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    background: transparent;
+    z-index: 10;
+    border: none;
+    margin-right: 10px;
+}
+
+.next {
+    height: 100px;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    background: transparent;
+    z-index: 10;
+    border: none;
+    margin-left: 10px;
+}
+
+.pre:hover {
+    background-color: #444;
+}
+
+.next:hover {
+    background-color: #444;
+}
+
+.carousel_images_con p {
+    position: absolute;
+    /* Overlaps the image */
+    top: 60%;
+    /* Centers vertically */
+    left: 10%;
+    /* Centers horizontally */
+    transform: translate(-50%, -50%);
+    /* Perfect centering */
+    color: white;
+    /* Text color */
+    font-size: 60px;
+    font-weight: italic;
+    background: semi-transparent;
+    /* Adds a semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.carousel_images_con:hover,
+.carousel_images_con:active {
+    /* Active for touch devices */
+    transform: scale(1.1);
+    /* Image comes forward */
+}
+</style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="overlap"></div>
+        <div class="Language">
+            <img class="netflix_img" src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="Netflix_Logo" />
+            <div class="Sign_in">
+                <select class="lan">
+                    <option value="eng">English</option>
+                    <option value="tam">Tamil</option>
+                </select>
+                <button class="b2">Sign In</button>
+            </div>
+        </div>
+        <div class="home_page">
+
+            <div class="home_text">
+                <span class="s1">Unlimited movies,</span>
+                <p class="s2">TV shows and more</p>
+                <p class="s3">Starts at ₹149. Cancel at any time.</p>
+                <span class="s4">Ready to watch? Enter your email to create or restart your membership.</span>
+                <div class="input_con">
+                    <input type="text" placeholder="Email address">
+                    <button class="b1">Get Started &gt;</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <h1 class="more_heading">Trending</h1>
+    <div class="carousel_container">
+        <button id="pre" class="pre">&lt;</button>
+        <div class="carousel_items">
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABb7eHPTSWGCu247RvpZJHdW3qttaBrCbgX9RNWKBw-ysL1Tht2-OWWS4N5UarllTVyaC-5cX5Er5vJ-Y_LfK5STgnoG_iVkmt0Y.webp?r=680" class="carousel_images" />
+                <p>1</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcaxAOO875GJCdVuF0m1TZ3t7bpSuHTJByPn3R_IUKqnTVM3S9XmcC4-g-Ep1TblyvtA-xEjnx4TKXkxqIX8uBSLvyp-xQUUyfntLLUhwqlyTdsAomLuue-Df9gov2xymJYy.webp?r=62a" class="carousel_images" />
+                <p>2</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcBQAzZgCcAJyLKGf0x3EjJHKr1h1oCRUQDfVspaHXampP-RjiOkIRlWBz7ViFOvUI1EdPSRcxoOPmB7paPLi52W4OmQZJ4NDMQ.webp?r=a92" class="carousel_images" />
+                <p>3</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcJkAYihjBQ5SjWbwydLdZE8Dm1cJ0whRc21AEIS4V0VO8w65lEDAW5gwzTFTUuNqVTgBcgucwr6rMeRHra3xlru9n1CCtfOm1s.webp?r=e1d" class="carousel_images" />
+                <p>4</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABRB3rewJT09RhxS4rHE_KfiiI3yrHEI3H2KcP4K5AxMBqUOZVM4QeaV9NjNs8CJ4AEjhH_BXKGaSWdOqQgWLNpHFKadmEfFjdf4.webp?r=de2" class="carousel_images" />
+                <p>5</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABScSAnI47ovoETcYBhKCILXN91D3uCQTeh3aG24EF1iRpP7YNh86hK0eF8JkfKAzdNYZcjcvLy4UB_BpSQgg2AcvjjRMpP6A8C0.webp?r=4bd" class="carousel_images" />
+                <p>6</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABTsIHqmKvuiJaunFg-3M7eRlEBPik8Un-eqTK-od9x48LzeGITagPm82bIopTRvyhIEMehQNdXN2qfj0AVpDTMhftqYStaCieJdbO-jfhSkFUVGBs9eYkpkjdzOj_UCKZi53.webp?r=06c" class="carousel_images" />
+                <p>7</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABUiKNXIYjkmCmVedWUxralkvxaJAvqtsiIxM-jkmtG4Bgpu2XYlDGkqwmqUjujkKNLwjuiImN5xHgYQvYE5sgAtW2voNprG98TkAh737RgL5kQZrGbIhuwp_Tn_aJi7PzSFE.webp?r=f85" class="carousel_images" />
+                <p>8</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABZJH5UgOhy6NyDoAfEigLLNPRc_cw2W7Gz87mbTfvRDHbr1fLHhrPpcKQdXnREMcUcZbnX8_ZK8mYS1CgW8B4NXHcTA-grl4BSpgtPn-jMwZpsh7Kk2XcJArjUbsdp0u5JLX.webp?r=e02" class="carousel_images" />
+                <p>9</p>
+            </div>
+            <div class="carousel_images_con">
+                <img src="https://occ-0-2484-3663.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABZnjM_Ljo0Ugt0oFeUE_Nn6aPb-LFvb3uH_GhNmL50iO6RZ8wngRwrKbr40LK-Dp9Hzxy_JWQKjpfXwOXC7SScR0i_3B9yM2kQU.webp?r=d74" class="carousel_images" />
+                <p>10</p>
+            </div>
+        </div>
+        <button id="next" class="next">&gt;</button>
+    </div>
+    <div class="main2">
+        <h1 class="more_heading">More reasons to join</h1>
+        <div class="reasons">
+            <div class="reasons_con">
+                <h1>Enjoy on your TV</h1>
+                <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+            </div>
+            <div class="reasons_con">
+                <h1>Download your shows to watch offline</h1>
+                <p>Save your favourites easily and always have something to watch.</p>
+            </div>
+        </div>
+        <div class="reasons">
+            <div class="reasons_con">
+                <h1>Watch everywhere</h1>
+                <p>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</p>
+            </div>
+            <div class="reasons_con">
+                <h1>Create profiles for kids</h1>
+                <p>Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+            </div>
+        </div>
+    </div>
+    <div class="main3">
+        <h1 class="more_heading">Frequently Asked Questions</h1>
+        <div>
+            <div class="frequent_con" onclick="event_6()" id=E_12>
+                <h1 class="f_h">What is Netflix?</h1>
+                <div class="plus-icon"></div>
+            </div>
+            <div class="explanation" id="E_11">
+                <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
+                    You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+            </div>
+        </div>
+        <div>
+            <div class="frequent_con" onclick="event_1()" id=E_2>
+                <h1 class="f_h">How much does Netflix cost?</h1>
+                <div class="plus-icon"></div>
+            </div>
+            <div class="explanation" id="E_1">
+                <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more – on thousands of internet-connected devices.
+                    You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!</p>
+            </div>
+        </div>
+        <div>
+            <div class="frequent_con" onclick="event_2()" id="E_4">
+                <h1 class="f_h">Where can I watch?</h1>
+                <div class="plus-icon"></div>
+            </div>
+            <div class="explanation" id="E_3">
+                <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+
+                    You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.</p>
+            </div>
+        </div>
+        <div>
+            <div class="frequent_con" onclick="event_3()" id="E_6">
+                <h1 class="f_h">How do I cancel?</h1>
+                <div class="plus-icon"></div>
+            </div>
+            <div class="explanation" id="E_5">
+                <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+            </div>
+        </div>
+        <div>
+            <div class="frequent_con" onclick="event_4()" id="E_8">
+                <h1 class="f_h">What can i watch on Netflix</h1>
+                <div class="plus-icon"></div>
+            </div>
+            <div class="explanation" id="E_7">
+                <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+            </div>
+        </div>
+        <div>
+            <div class="frequent_con" onclick="event_5()" id="E_10">
+                <h1 class="f_h">Is Netflix good for Kids</h1>
+                <div class="plus-icon"></div>
+            </div>
+            <div class="explanation" id="E_9">
+                <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.
+
+                    Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="main4">
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+        <div class="input_con_2">
+            <input type="text" placeholder="Email address">
+            <button class="b1">Get Started &gt;</button>
+        </div>
+    </div>
+    <div class="main5">
+        <p class="Questions">Questions? Call <span class="Questions_num">000-800-919-1743</span></p>
+        <div class="questions_con">
+            <div>
+                <p>FAQ</p>
+                <p>Investor Relations</p>
+                <p>Privacy</p>
+                <p>Speed Test</p>
+            </div>
+            <div>
+                <p>Help Centre</p>
+                <p>Jobs</p>
+                <p>Cookie Preferences</p>
+                <p>Legal Notices</p>
+            </div>
+            <div>
+                <p>Account</p>
+                <p>Ways to Watch</p>
+                <p>Corporate Information</p>
+                <p>Only on Netflix</p>
+            </div>
+            <div>
+                <p>Media Centre</p>
+                <p>Terms of Use</p>
+                <p>Contact Us</p>
+                <p>More queries</p>
+            </div>
+        </div>
+        <select class="lan_1">
+            <option value="eng">English</option>
+            <option value="tam">Tamil</option>
+        </select>
+        <p class="Questions_1">Netflix India</p>
+    </div>
+<script>
+    let a = document.getElementById("E_1");
+let b = document.getElementById("E_2");
+let c = document.getElementById("E_3");
+let d = document.getElementById("E_4");
+let e = document.getElementById("E_5");
+let f = document.getElementById("E_6");
+let g = document.getElementById("E_7");
+let h = document.getElementById("E_8");
+let l = document.getElementById("E_9");
+let m = document.getElementById("E_10");
+let n = document.getElementById("E_11");
+let o = document.getElementById("E_12");
+let A = document.getElementById("pre");
+let B = document.getElementById("next");
+let C = document.querySelector(".carousel_items");
+
+
+A.addEventListener("click", () => {
+    C.scrollLeft -= 250
+    console.log("A")
+})
+B.addEventListener("click", () => {
+    C.scrollLeft += 250
+    console.log("B")
+})
+
+function event_1() {
+    a.classList.toggle("show")
+    b.classList.toggle("f_hide")
+}
+
+function event_2() {
+    c.classList.toggle("show")
+    d.classList.toggle("f_hide")
+}
+
+function event_3() {
+    e.classList.toggle("show")
+    f.classList.toggle("f_hide")
+}
+
+function event_4() {
+    g.classList.toggle("show")
+    h.classList.toggle("f_hide")
+}
+
+function event_5() {
+    l.classList.toggle("show")
+    m.classList.toggle("f_hide")
+}
+
+function event_6() {
+    n.classList.toggle("show")
+    o.classList.toggle("f_hide")
+}
+</script>
+</body>
+
+</html>
